@@ -15,8 +15,8 @@ using namespace std;
 int main()
 {
 	blasint n = 10;
-    blasint in_x =1;
-    blasint in_y =1;
+    blasint in_x = 1;
+    blasint in_y = 1;
 
     std::vector<double> x(n);
     std::vector<double> y(n);

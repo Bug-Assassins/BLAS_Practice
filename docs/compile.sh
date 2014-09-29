@@ -31,13 +31,8 @@ return_val=$?
 # Checks for error in compiling and for user directive
 if [ $return_val -eq 0 ] && [ $option -eq 1 ]
 then
-    echo $LD_LIBRARY_PATH | grep "/opt/OpenBLAS/lib/" >/dev/null 2>/dev/null
-
-    if [ $? -ne 0 ]
-    then
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
-    fi
-
+    unset LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/opt/OpenBLAS/lib/
     ./`basename $input .cpp`.out 
 else
     echo "Compilation return value $return_val"

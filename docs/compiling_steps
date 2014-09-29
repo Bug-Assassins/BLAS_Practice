@@ -1,2 +1,2 @@
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
-g++ blas_axpy.cpp -o blas_axpy -I /opt/OpenBLAS/include/ -lopenblas
+g++ blas_axpy.cpp -o blas_axpy -I /opt/OpenBLAS/include/ -L /opt/OpenBLAS/lib -lopenblas

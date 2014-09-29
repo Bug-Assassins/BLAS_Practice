@@ -23,8 +23,10 @@ LIBRARY_PATH="-L /opt/OpenBLAS/lib"
 # Sets the libraries to be linked"
 LIBRARY="-lopenblas"
 
+FLAG="-fopenmp"
+
 # Compiling
-g++ $input $OUTPUT $INCLUDE $LIBRARY_PATH $LIBRARY
+g++ $input $OUTPUT $INCLUDE $LIBRARY_PATH $LIBRARY $FLAG
 
 return_val=$?
 

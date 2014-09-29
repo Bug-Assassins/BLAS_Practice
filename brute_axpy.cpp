@@ -4,7 +4,8 @@
 #include<sys/time.h>
 #include<cstdlib>
 #include<ctime>
-#define MAX_ITER 1
+#include<omp.h>
+#define MAX_ITER 20
 #define MAX_SIZE 100000000
 using namespace std;
 
@@ -31,23 +32,24 @@ int main()
 
 
     printf("starting Blas Operation ...... ");fflush(stdout);
-    //gettimeofday(&blas_start, NULL);
     blas_start = time(NULL);
+    double bbst = omp_get_wtime();
     for(int j = 0 ;j < MAX_ITER;j++)
         cblas_daxpy( n, alpha, &x[0], in_x, &y[0], in_y);
-    //gettimeofday(&blas_end, NULL);
+    double bben = omp_get_wtime();
     blas_end = time(NULL);
     printf("Done \n");fflush(stdout);
 
     printf("Starting brute operation .......");fflush(stdout);
-    //gettimeofday(&brute_start, NULL);
     brute_start = time(NULL);
+    double brst = omp_get_wtime();
     for(int j = 0 ;j < MAX_ITER;j++)
+        #pragma omp parallel for
         for(int i =0 ;i < n ; i++)
         {
             yb[i] = yb[i] + (xb[i]*alpha);
         }
-    //gettimeofday(&brute_end, NULL);
+    double bren = omp_get_wtime();
     brute_end = time(NULL);
     printf("Done\n");fflush(stdout);
 
@@ -60,8 +62,8 @@ int main()
         }
     }
 
-    printf("Time for Blas = %lf\n",difftime(blas_end, blas_start));fflush(stdout);
-    printf("Time for Brute = %lf\n",difftime(brute_end, brute_start));fflush(stdout);
+    printf("Time for Blas = %lf %lf\n",difftime(blas_end, blas_start), bben - bbst);fflush(stdout);
+    printf("Time for Brute = %lf %lf\n",difftime(brute_end, brute_start), bren - brst);fflush(stdout);
     //printf("Time for Blas = %lf\n", (blas_end.tv_sec - blas_start.tv_sec)*1000000LL + (blas_end.tv_usec - blas_start.tv_usec));
     //printf("Time for Brut = %lf\n", (brute_end.tv_sec - brute_start.tv_sec)*1000000LL + (brute_end.tv_usec - brute_start.tv_usec));
 

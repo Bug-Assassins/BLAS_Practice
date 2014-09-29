@@ -23,11 +23,20 @@ LIBRARY_PATH="-L /opt/OpenBLAS/lib"
 # Sets the libraries to be linked"
 LIBRARY="-lopenblas"
 
-FLAG="-fopenmp"
+# Sets the flag required for openmp programs
+OPENMPFLAG="-fopenmp"
+
+# Sets the total flag
+FLAG="$OUTPUT $INCLUDE $LIBRARY_PATH $LIBRARY"
+
+cat $input | grep omp\.h  >/dev/null
+if [ $? -eq 0 ]
+then
+    FLAG=${FLAG}" $OPENMPFLAG"
+fi
 
 # Compiling
-g++ $input $OUTPUT $INCLUDE $LIBRARY_PATH $LIBRARY $FLAG
-
+g++ $input $FLAG
 return_val=$?
 
 # Checks for error in compiling and for user directive

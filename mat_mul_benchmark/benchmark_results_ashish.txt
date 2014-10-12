@@ -1,0 +1,89 @@
+
+Testing for Size = 2
+Time Taken for Mat Mul Flint = 0.000033
+Time Taken for Only BLAS     = 0.000231
+Outputs are Equal
+
+Testing for Size = 10
+Time Taken for Mat Mul Flint = 0.000040
+Time Taken for Only BLAS     = 0.000599
+Outputs are Equal
+
+Testing for Size = 25
+Time Taken for Mat Mul Flint = 0.000078
+Time Taken for Only BLAS     = 0.000092
+Outputs are Equal
+
+Testing for Size = 50
+Time Taken for Mat Mul Flint = 0.000188
+Time Taken for Only BLAS     = 0.000700
+Outputs are Equal
+
+Testing for Size = 100
+Time Taken for Mat Mul Flint = 0.000797
+Time Taken for Only BLAS     = 0.000376
+Outputs are Equal
+
+Testing for Size = 150
+Time Taken for Mat Mul Flint = 0.001862
+Time Taken for Only BLAS     = 0.002040
+Outputs are Equal
+
+Testing for Size = 200
+Time Taken for Mat Mul Flint = 0.004940
+Time Taken for Only BLAS     = 0.001600
+Outputs are Equal
+
+Testing for Size = 250
+Time Taken for Mat Mul Flint = 0.005124
+Time Taken for Only BLAS     = 0.002505
+Outputs are Equal
+
+Testing for Size = 256
+Time Taken for Mat Mul Flint = 0.005459
+Time Taken for Only BLAS     = 0.002460
+Outputs are Equal
+
+Testing for Size = 300
+Time Taken for Mat Mul Flint = 0.012309
+Time Taken for Only BLAS     = 0.006305
+Outputs are Equal
+
+Testing for Size = 350
+Time Taken for Mat Mul Flint = 0.017820
+Time Taken for Only BLAS     = 0.006678
+Outputs are Equal
+
+Testing for Size = 400
+Time Taken for Mat Mul Flint = 0.021038
+Time Taken for Only BLAS     = 0.004708
+Outputs are Equal
+
+Testing for Size = 450
+Time Taken for Mat Mul Flint = 0.036376
+Time Taken for Only BLAS     = 0.025695
+Outputs are Equal
+
+Testing for Size = 500
+Time Taken for Mat Mul Flint = 0.036536
+Time Taken for Only BLAS     = 0.009798
+Outputs are Equal
+
+Testing for Size = 550
+Time Taken for Mat Mul Flint = 0.058498
+Time Taken for Only BLAS     = 0.011542
+Outputs are Equal
+
+Testing for Size = 575
+Time Taken for Mat Mul Flint = 0.071403
+Time Taken for Only BLAS     = 0.013321
+Outputs are Equal
+
+Testing for Size = 589
+Time Taken for Mat Mul Flint = 0.069863
+Time Taken for Only BLAS     = 0.015246
+Outputs are Equal
+
+Testing for Size = 600
+Time Taken for Mat Mul Flint = 0.063426
+Different Output !! Error

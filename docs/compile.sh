@@ -21,7 +21,7 @@ INCLUDE="-I /opt/OpenBLAS/include/"
 LIBRARY_PATH="-L /opt/OpenBLAS/lib"
 
 # Sets the libraries to be linked"
-LIBRARY="-lopenblas"
+LIBRARY="-lopenblas -lflint"
 
 FLAG="-fopenmp"
 

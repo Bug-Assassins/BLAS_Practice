@@ -49,7 +49,7 @@ int main()
         fprintf(fp,"\n");
     }
 
-    printf("Time Taken for Only BLAS     = %lf\n", mul_end - mul_start);
+    printf("%lf", mul_end - mul_start);
 
 	return 0;
 }

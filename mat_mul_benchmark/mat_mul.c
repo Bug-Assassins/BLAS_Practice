@@ -47,7 +47,7 @@ int main()
         fprintf(fp,"\n");
     }
 
-    printf("Time Taken for Mat Mul Flint = %lf\n", mul_end - mul_start);
+    printf("%lf", mul_end - mul_start);
 
 	return 0;
 }

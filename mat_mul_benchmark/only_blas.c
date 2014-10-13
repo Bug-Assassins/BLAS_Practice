@@ -15,7 +15,11 @@ int main()
 {
 	long long int n = inp(), mo = inp(), i, j;
 
-	double mul_start, mul_end, A[n*n], B[n*n], C[n*n];
+	double mul_start, mul_end, *A, *B, *C;
+
+	A = (double *) malloc(n * n * sizeof(double));
+	B = (double *) malloc(n * n * sizeof(double));
+	C = (double *) malloc(n * n * sizeof(double));
 
     for(i = 0; i < n; i++)
     {
@@ -23,6 +27,8 @@ int main()
         {
             A[(i*n) + j] = inp();
             B[(i*n) + j] = inp();
+            //A[(i*n) + j] = 0.0;
+            //B[(i*n) + j] = 0.0;
         }
     }
 
@@ -31,7 +37,7 @@ int main()
     cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, n, n, n, 1, A, n, B, n, 0.0, C, n);
     mul_end = omp_get_wtime();
 
-    FILE* fp = fopen("./outputs/mat_mul_only_blas.txt","w");
+    FILE* fp = fopen("./outputs/mat_mul_only_blas.out","w");
 
     for(i = 0; i < n; i++)
     {

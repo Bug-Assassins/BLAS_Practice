@@ -35,7 +35,7 @@ int main()
     nmod_mat_mul(C, A, B);
     mul_end = omp_get_wtime();
 
-    FILE* fp = fopen("./outputs/mat_mul_output.txt","w");
+    FILE* fp = fopen("./outputs/mat_mul_output.out","w");
 
     for(i = 0; i < n; i++)
     {
